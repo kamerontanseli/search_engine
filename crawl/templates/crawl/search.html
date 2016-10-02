@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Search Engine</title>
+    </head>
+    <body>
+        <h1>Search The Web :D</h1>
+        <form action="" method="get">
+            <input type="text" name="query" value="{{request.GET.query}}" placeholder="E.g: Computer" required><input type="submit">
+        </form>
+
+        {% if results %}
+            <ul>
+                {% for result in results %}
+                    <li> <a href="{{ result.url }}">{{ result.url }} </a></li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+    </body>
+</html>
